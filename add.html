@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Addition and Multiplication</title>
+</head>
+<body>
+    <h2>Addition and Multiplication of Two Numbers</h2>
+
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1" /><br><br>
+
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2" /><br><br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <h3>Results:</h3>
+    <p id="additionResult"></p>
+    <p id="multiplicationResult"></p>
+
+    <script>
+        function calculate() {
+            const n1 = parseFloat(document.getElementById('num1').value);
+            const n2 = parseFloat(document.getElementById('num2').value);
+
+            if (isNaN(n1) || isNaN(n2)) {
+                alert('Please enter valid numbers');
+                return;
+            }
+
+            document.getElementById('additionResult').textContent = 'Addition: ' + (n1 + n2);
+            document.getElementById('multiplicationResult').textContent = 'Multiplication: ' + (n1 * n2);
+        }
+    </script>
+</body>
+</html>
